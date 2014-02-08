@@ -1,0 +1,27 @@
+*********************************************
+%%%%%%%%%%%%%%   WUGraph.java  %%%%%%%%%%%%%%
+*********************************************
+[2] To support getVertices() in O(|V|) time we designed a VList class that is based off of the DList class designed in our homework #5. The difference in VList from DList is the field of a DList inside it to support adjacency lists. Other modification included methods to support this extra field, both to insert, modify, and return values in this field.
+
+[4] To support removeVertex() in O(d) time we designed a Elist based off of the DList from our homework #5. This Elist had extra fields supporting partner edges so we coudl use two nodes to represent one edge (u, v). One would be in u's list, and one would be in v's list. Each of these nodes was half an edge and each EListNode had a field "partner" which is a reference to this other half an edge. This allows us to remove the partner edges in O(1) time per edge.
+
+*********************************************
+%%%%%%%%%%%%%%   Kruskal.java  %%%%%%%%%%%%%%
+*********************************************
+
+	In Kruskal.java, several decisions had to be made. The first was to create a class, Edge.java in order to 
+represent an Edge more effectively and cleanly. Then, we decided to represent a collection of edges in the given
+graph as an array. However, we quickly realized that this representation was highly problematic. Lots of space
+was wasted in null references on the array, and accurately sizing and iterating through the array was problematic
+because of these null references. So we decided to use a LinkedQueue data structure from the homeworks, and this
+had the added advantage of already having a quicksort we had written for that same homework. The Edge class
+was changed to implement a Comparable interface so as to be compatible with the quicksort method from the homework.
+    The other major decision involved using the disjointSets to figure out which clusters had already been "checked"
+on Kruskal's algorithm. To use the disjointSets, there needed to be a way to map each Vertex object to a specific 
+number, so the disjointSets methods would work. A hash table seemed a natural way to represent this mapping, and we used
+a chained hash table from the homeworks in order to represent that mapping. Anytime we needed to see which Vertex object
+corresponded to which disJointset index, we could just use the hash table as a dictionary. All this only took ideally O(1) 
+time (with no collisions). 
+     After those two major decisions were in place, it was easy following along Kruskal's algorithm to get the minimum spanning tree.
+
+
