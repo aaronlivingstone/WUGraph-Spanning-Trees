@@ -5,7 +5,8 @@ WUGraph-Spanning-Trees
 
 This project was completed as part of coursework for CS61B at the University of California, Berkeley.
 
-Specifications:
+<b>Specifications:</b>
+
 Implement a well-encapsulated ADT called WUGraph in a package called graph. A WUGraph represents a weighted, undirected graph in which self-edges are allowed.  Any object whatsoever can serve as a vertex of a WUGraph.
 
 For maximum speed, you must store edges in two data structures:  unordered doubly-linked adjacency lists and a hash table.  You are expected to support the following public methods in the running times specified.  (You may ignore hash table resizing time when trying to achieve a specified running time--but your hash table should resize itself when necessary to keep the load factor constant.)  Below, |V| is the number of vertices in the graph, and d is the degree of the vertex in question.
