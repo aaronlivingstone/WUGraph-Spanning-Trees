@@ -5,7 +5,7 @@ WUGraph-Spanning-Trees
 
 This project was completed as part of coursework for CS61B at the University of California, Berkeley.
 
-<div align="center"> <b>Specifications:</b> </div>
+<b>Specifications:</b>
 
 Implement a well-encapsulated ADT called WUGraph in a package called graph. A WUGraph represents a weighted, undirected graph in which self-edges are allowed.  Any object whatsoever can serve as a vertex of a WUGraph.
 
